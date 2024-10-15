@@ -1,5 +1,5 @@
 /*
-  TinyEXIF.h -- A simple ISO C++ library to parse basic EXIF and XMP
+  tinyexif.h -- A simple ISO C++ library to parse basic EXIF and XMP
                 information from a JPEG file.
 
   Copyright (c) 2015-2017 Seacave
@@ -56,7 +56,7 @@
 #   define TINYEXIF_LIB
 #endif
 
-namespace TinyEXIF {
+namespace tinyexif {
 
 enum ErrorCode {
 	PARSE_SUCCESS           = 0, // Parse EXIF and/or XMP was successful
@@ -316,6 +316,6 @@ public:
 	} MicroVideo;
 };
 
-} // namespace TinyEXIF
+} // namespace tinyexif
 
 #endif // __TINYEXIF_H__

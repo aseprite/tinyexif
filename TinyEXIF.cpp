@@ -1,5 +1,5 @@
 /*
-  TinyEXIF.cpp -- A simple ISO C++ library to parse basic EXIF and XMP
+  tinyexif.cpp -- A simple ISO C++ library to parse basic EXIF and XMP
                   information from a JPEG file.
 
   Copyright (c) 2015-2017 Seacave
@@ -31,7 +31,7 @@
   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "TinyEXIF.h"
+#include "tinyexif.h"
 
 #ifndef TINYEXIF_NO_XMP_SUPPORT
 #include <tinyxml2.h>
@@ -93,7 +93,7 @@ namespace Tools {
 } // namespace Tools
 
 
-namespace TinyEXIF {
+namespace tinyexif {
 
 enum JPEG_MARKERS {
 	JM_START = 0xFF,
@@ -1314,4 +1314,4 @@ void EXIFInfo::clear() {
 	MicroVideo.MicroVideoOffset = 0;
 }
 
-} // namespace TinyEXIF
+} // namespace tinyexif
