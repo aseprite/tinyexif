@@ -3,7 +3,7 @@
 #ifdef _MSC_VER
 #include <windows.h>
 #endif
-#include "TinyEXIF.h"
+#include "tinyexif.h"
 #include <iostream> // std::cout
 #include <fstream>  // std::ifstream
 #include <vector>   // std::vector
@@ -12,7 +12,7 @@
 int main(int argc, const char** argv)
 {
 	if (argc != 2) {
-		std::cout << "Usage: TinyEXIF <image_file>\n";
+		std::cout << "Usage: tinyexif <image_file>\n";
 		return -1;
 	}
 
@@ -24,7 +24,7 @@ int main(int argc, const char** argv)
 	}
 
 	// parse image EXIF and XMP metadata
-	TinyEXIF::EXIFInfo imageEXIF(stream);
+	tinyexif::EXIFInfo imageEXIF(stream);
 	if (!imageEXIF.Fields) {
 		std::cout << "error: no EXIF or XMP metadata\n";
 		return -3;
