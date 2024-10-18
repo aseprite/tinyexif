@@ -1,20 +1,20 @@
-# TinyEXIF: Tiny ISO-compliant C++ EXIF and XMP parsing library for JPEG
+# tinyexif: Tiny ISO-compliant C++ EXIF and XMP parsing library for JPEG
 
 ## Introduction
 
-TinyEXIF is a tiny, lightweight C++ library for parsing the metadata existing inside JPEG files. No third party dependencies are needed to parse EXIF data, however for accesing XMP data the [TinyXML2](https://github.com/leethomason/tinyxml2) library is needed. TinyEXIF is easy to use, simply copy the two source files in you project and pass the JPEG data to EXIFInfo class. Currently common information like the camera make/model, original resolution, timestamp, focal length, lens info, F-stop/exposure time, GPS information, etc, embedded in the EXIF/XMP metadata are fetched. It is easy though to extend it and add any missing or new EXIF/XMP fields.
+tinyexif is a tiny, lightweight C++ library for parsing the metadata existing inside JPEG files. No third party dependencies are needed to parse EXIF data, however for accesing XMP data the [TinyXML2](https://github.com/leethomason/tinyxml2) library is needed. tinyexif is easy to use, simply copy the two source files in you project and pass the JPEG data to EXIFInfo class. Currently common information like the camera make/model, original resolution, timestamp, focal length, lens info, F-stop/exposure time, GPS information, etc, embedded in the EXIF/XMP metadata are fetched. It is easy though to extend it and add any missing or new EXIF/XMP fields.
 
 ## Usage example
 
 ```
-#include "TinyEXIF.h"
+#include "tinyexif.h"
 #include <iostream> // std::cout
 #include <fstream>  // std::ifstream
 #include <vector>   // std::vector
 
 int main(int argc, const char** argv) {
 	if (argc != 2) {
-		std::cout << "Usage: TinyEXIF <image_file>" << std::endl;
+		std::cout << "Usage: tinyexif <image_file>" << std::endl;
 		return -1;
 	}
 
@@ -22,7 +22,7 @@ int main(int argc, const char** argv) {
 	std::ifstream istream(argv[1], std::ifstream::binary);
 
 	// parse image EXIF and XMP metadata
-	TinyEXIF::EXIFInfo imageEXIF(istream);
+	tinyexif::EXIFInfo imageEXIF(istream);
 	if (imageEXIF.Fields)
 		std::cout
 			<< "Image Description " << imageEXIF.ImageDescription << "\n"
